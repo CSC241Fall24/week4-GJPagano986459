@@ -1,3 +1,5 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
 // Problem1.java
 /*3.1 Problem 1: Concatenate Two Linked Lists
 Implement a function to concatenate two linked lists.
@@ -19,23 +21,32 @@ to l2)
 – Output: (2 -> 3 -> 1 -> 4 -> 5) */
 public class Problem1 {
     public static ListNode concatenate(ListNode l1, ListNode l2) {
+        // If l1 is null, return l2 (which could also be null)
+        if (l1 == null) {
+            return l2;
+        }
+        // If l2 is null, return l1 as is
         if (l2 == null) {
             return l1;
         }
-        // TODO: Implement the concatenate method
+    
+        // Create a pointer for l1 to traverse to the end
         ListNode current = l1;
-        // This method should concatenate l2 to l1 and return l1
+    
+        // Traverse to the end of l1
         while (current.next != null) {
-           current = current.next; 
+            current = current.next;
         }
+    
+        // Append nodes from l2 to l1
         ListNode l2Current = l2;
-        while (l2Current != null){
+        while (l2Current != null) {
             ListNode newNode = new ListNode(l2Current.val);
-            current.next = newNode;
-            current = newNode;
-            l2Current = l2Current.next;
+            current.next = newNode; // Link the new node to the end of l1
+            current = newNode; // Move current to the new node
+            l2Current = l2Current.next; // Move to the next node in l2
         }
-        // Remember to create new nodes instead of directly linking l1 to l2
-        return l1;
+    
+        return l1; // Return the modified l1
     }
 }
