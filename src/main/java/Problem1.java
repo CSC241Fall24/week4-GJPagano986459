@@ -19,6 +19,9 @@ to l2)
 – Output: (2 -> 3 -> 1 -> 4 -> 5) */
 public class Problem1 {
     public static ListNode concatenate(ListNode l1, ListNode l2) {
+        if (l2 == null) {
+            return l1;
+        }
         // TODO: Implement the concatenate method
         ListNode current = l1;
         // This method should concatenate l2 to l1 and return l1
