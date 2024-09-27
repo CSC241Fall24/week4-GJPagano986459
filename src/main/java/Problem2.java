@@ -23,7 +23,7 @@ public class Problem2 {
     public static ListNode insert(ListNode head, int val, int position) {
         ListNode newNode = new ListNode(val);
         // TODO: Implement the insert method
-        if (position == 1 || head == nul) {
+        if (position == 1 || head == null) {
             newNode.next = head;
             return newNode;
         }

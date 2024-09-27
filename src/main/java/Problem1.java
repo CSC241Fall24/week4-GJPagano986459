@@ -27,7 +27,7 @@ public class Problem1 {
         }
         ListNode l2Current = l2;
         while (l2Current != null){
-            ListNode newNode = new ListNode(lsCurrent.val);
+            ListNode newNode = new ListNode(l2Current.val);
             current.next = newNode;
             current = newNode;
             l2Current = l2Current.next;
